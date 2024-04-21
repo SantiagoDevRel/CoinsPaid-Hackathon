@@ -21,6 +21,8 @@
 
 - implement automated transaction in the web3 plugin when the fees are low
 
+- implement sendFee() to the CoinsPaid master address before sending all the funds to the business address
+
 - use AI large language model (LLMs) to predict gas prices based on past data
 
 - create a classification model that determines whether it is a good time to perform a transaction or not
