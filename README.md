@@ -22,7 +22,14 @@
 - payment aggregation: gathering all the funds from those addresses, and sending them to the business directly (send 99% of the funds to the business directly and not sending funds to the master contract/coinspaid wallet) and do offchain signing transactions.
 - withdraw/gas optimization to send TXs when there are 'low fees'
 
-## Ideal situation
+
+## Future implementations
+
+### Using LLMs to predict gas prices
+
+- create a classification model that determines whether it is a good time to perform a transaction or not
+
+- The goal is to identify good times to perform transactions based on # of transactions in mempool, types of transactions in the mempool, current gas price
 
 # Starting the nextjs App
 

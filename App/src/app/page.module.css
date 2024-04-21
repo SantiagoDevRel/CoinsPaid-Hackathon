@@ -29,7 +29,6 @@
   position: relative;
   margin: 0;
   padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
 }
@@ -37,6 +36,14 @@
 .code {
   font-weight: 700;
   font-family: var(--font-mono);
+}
+
+.good {
+  background-color: #97dead;
+}
+
+.bad {
+  background-color: #f54257;
 }
 
 .grid {
@@ -132,6 +139,9 @@
     margin-bottom: 120px;
     max-width: 320px;
     text-align: center;
+    align-items: center;
+
+
   }
 
   .card {

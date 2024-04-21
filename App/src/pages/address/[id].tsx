@@ -13,21 +13,6 @@ declare global {
 
 const AddressPage = () => {
   let web3: Web3;
-// Check if Metamask is installed
-  if (typeof window!== 'undefined' && window && typeof window?.ethereum !== 'undefined') {
-    // Use MetaMask's provider
-    window.web3 = new Web3(window.ethereum);
-    web3 = window.web3
-    // Request account access if needed
-    window.ethereum.enable().then(function (accounts) {
-      console.log('Metamask connected:', accounts[0]);
-      setAccounts(accounts);
-    }).catch(function (error) {
-      console.error('Error connecting to Metamask:', error);
-    });
-    } else {
-      console.error('Please install Metamask to use this application.');
-  }
 
 
   const router = useRouter();

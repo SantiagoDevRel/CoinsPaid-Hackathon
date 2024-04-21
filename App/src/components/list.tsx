@@ -14,17 +14,22 @@ const VerticalList = ({ items }) => {
     const [balance2, setBalance2] = useState("0"); // Initialize balance state
 
     useEffect(() => {
-        // Define an async function inside the effect to use await
-        const fetchBalance = async () => {
-            const bal = await web3.eth.getBalance("0x35E8E695AE06eFd6227bBEbC99856D292fE9Ef34");
-            setBalance(decFormat(web3.utils.fromWei(bal, 'ether'))); // Convert balance to Ether from Wei
-        };
-        const fetchBalance2 = async () => {
-            const bal = await web3.eth.getBalance("0x3a7C04Cfc376F0bb21466f5C594eeBd559705BaC");
-            setBalance2(decFormat(web3.utils.fromWei(bal, 'ether'))); // Convert balance to Ether from Wei
-        };
-        fetchBalance();
-        fetchBalance2();
+
+        const intervalId = setInterval(async () => {
+            // Define an async function inside the effect to use await
+            const fetchBalance = async () => {
+                const bal = await web3.eth.getBalance("0x35E8E695AE06eFd6227bBEbC99856D292fE9Ef34");
+                setBalance(decFormat(web3.utils.fromWei(bal, 'ether'))); // Convert balance to Ether from Wei
+            };
+            const fetchBalance2 = async () => {
+                const bal = await web3.eth.getBalance("0x3a7C04Cfc376F0bb21466f5C594eeBd559705BaC");
+                setBalance2(decFormat(web3.utils.fromWei(bal, 'ether'))); // Convert balance to Ether from Wei
+            };
+            fetchBalance();
+            fetchBalance2();
+
+        }, 3000); // Run this block every 3000 milliseconds
+        return () => clearInterval(intervalId);
     }, []); // Empty dependency array means this effect only runs once, similar to componentDidMount
 
 
