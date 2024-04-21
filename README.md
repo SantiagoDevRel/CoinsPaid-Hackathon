@@ -19,42 +19,17 @@
 ### Improvements:
 
 - address generation off-chain
-- payment aggregation: gathering all the funds from those addresses, and sending them to the business directly (maybe we can do a off-chain `getBalance()` of all the addresses and send 99% of the funds to the business directly and not sending funds to the master contract/coinspaid wallet)
+- payment aggregation: gathering all the funds from those addresses, and sending them to the business directly (send 99% of the funds to the business directly and not sending funds to the master contract/coinspaid wallet) and do offchain signing transactions.
 - withdraw/gas optimization to send TXs when there are 'low fees'
 
 ## Ideal situation
 
-# Others
+# Starting the nextjs App
 
-- mermaid code current situation
+git clone the repo
 
-```js
-classDiagram
-class MasterContract {
-+GenerateAddressForClientToPay()
-+WithdrawFundsFromBusiness()
-+ReceiveFundsFromClients()
-}
+`cd ./App`
 
-    MasterContract <..> BusinessAddress : withdrawFunds(ETH)
-    MasterContract <.. AddressClient1 : sendFunds
-    MasterContract <.. AddressClient2 : sendFunds
-    MasterContract <.. AddressClient3 : sendFunds
+ `yarn`
 
-    class BusinessAddress {
-      +PrivateKey
-      +Address
-    }
-    class AddressClient1 {
-      +PrivateKey
-      +Address
-    }
-    class AddressClient2 {
-      +PrivateKey
-      +Address
-    }
-    class AddressClient3 {
-      +PrivateKey
-      +Address
-    }
-```
+`yarn run dev`
