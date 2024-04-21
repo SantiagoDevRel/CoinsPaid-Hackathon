@@ -19,11 +19,11 @@
 
 ## Future implementations
 
-### Using LLMs to predict gas prices
+- implement automated transaction in the web3 plugin when the fees are low
+
+- use AI large language model (LLMs) to predict gas prices based on past data
 
 - create a classification model that determines whether it is a good time to perform a transaction or not
-
-- The goal is to identify good times to perform transactions based on # of transactions in mempool, types of transactions in the mempool, current gas price
 
 # Starting the nextjs App
 
