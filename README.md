@@ -9,19 +9,13 @@
 
 ### Flow
 
-1. CoinsPaid generate an address for the clients to send the funds
-2. Clients send funds to these generated addresses
-3. CoinsPaid gather all the funds from these addresses
-4. Business wants to withdraw, so CoinsPaid send the funds from the generated addresses to the businessAddress
-
-![alt text](image.png)
+![alt text](image-1.png)
 
 ### Improvements:
 
 - address generation off-chain
 - payment aggregation: gathering all the funds from those addresses, and sending them to the business directly (send 99% of the funds to the business directly and not sending funds to the master contract/coinspaid wallet) and do offchain signing transactions.
 - withdraw/gas optimization to send TXs when there are 'low fees'
-
 
 ## Future implementations
 
@@ -37,6 +31,6 @@ git clone the repo
 
 `cd ./App`
 
- `yarn`
+`yarn`
 
 `yarn run dev`
